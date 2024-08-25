@@ -2,7 +2,7 @@ import React from 'react';
 
 function PersonalDetailsCV({ personalDetails }) {
   return (
-    <div>
+    <div className='CV'>
       <h2>Personal Info</h2>
       <p>Name: {personalDetails.name}</p>
       <p>Email: {personalDetails.email}</p>

@@ -1,6 +1,7 @@
 function ExperienceInfoCV({ experienceInfo }) {
   return (
-    <div>
+    <div className="CV">
+      <h2>Experience Info</h2>
       {experienceInfo.map((experience, index) => (
         <div key={index}>
           <h3>Experience #{index + 1}</h3>

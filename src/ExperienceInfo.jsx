@@ -1,5 +1,3 @@
-import React from 'react';
-
 function ExperienceInfo({ experienceInfo, setExperienceInfo }) {
   function handleExperienceChange(index, event) {
     const { name, value } = event.target; 
@@ -21,17 +19,22 @@ function ExperienceInfo({ experienceInfo, setExperienceInfo }) {
     ]);
   }
 
+  function deleteExperience(index) {
+    const updatedExperience = experienceInfo.filter((_, i) => i !== index);
+    setExperienceInfo(updatedExperience); 
+  }
+
   return (
     <div>
       <h2>Experience Info</h2>
       {experienceInfo.map((experience, index) => (
-        <div key={index}>
+        <div key={index} className="inputs">
           <input
             type="text"
             name="companyName"
             placeholder="Company Name"
             value={experience.companyName}
-            onChange={(e) => handleExperienceChange(index, e)} // Pass index and event
+            onChange={(e) => handleExperienceChange(index, e)} 
           />
 
           <input
@@ -65,9 +68,10 @@ function ExperienceInfo({ experienceInfo, setExperienceInfo }) {
             value={experience.endDate}
             onChange={(e) => handleExperienceChange(index, e)}
           />
+          <button onClick={() => deleteExperience(index)} className="delete-btn">Delete</button>
         </div>
       ))}
-      <button onClick={addExperience}>Add Another Experience</button>
+      <button onClick={addExperience} className="add-btn">Add Another Experience</button>
     </div>
   );
 }

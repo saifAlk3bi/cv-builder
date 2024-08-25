@@ -8,7 +8,7 @@ function PersonalDetails({ personalDetails, setPersonalDetails }) {
   }
 
   return (
-    <div className='personal-details'>
+    <div className='inputs'>
       <h2>Personal details</h2>
       <input
         type="text"

@@ -1,7 +1,7 @@
 
 function EducationInfoCV({ educationInfo }) {
   return (
-    <div>
+    <div className="CV">
       <h2>Education Info</h2>
       {educationInfo.map((education, index) => (
         <div key={index}>

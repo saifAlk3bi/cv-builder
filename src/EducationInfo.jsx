@@ -20,12 +20,16 @@ function EducationInfo({ educationInfo, setEducationInfo }) {
       }
     ]);
   }
+  function deleteEducation(index) {
+    const updatedEducation = educationInfo.filter((element,i) => i !== index)
+    setEducationInfo(updatedEducation)
+  }
 
   return (
-    <div>
+    <div className='education-info'>
       <h2>Education Details</h2>
       {educationInfo.map((education, index) => (
-        <div key={index}>
+        <div key={index} className='inputs'>
           <input
             type="text"
             name="schoolName"
@@ -54,10 +58,10 @@ function EducationInfo({ educationInfo, setEducationInfo }) {
             placeholder="Finish Date"
             onChange={(e) => handleEducationChange(index, e)}
           />
-          
+          <button onClick={() => deleteEducation(index)} className='delete-btn'>Delete</button>
         </div>
       ))}
-      <button onClick={() => addEducation()}>Add Another Education</button>
+      <button onClick={() => addEducation()} className='add-btn'>Add Another Education</button>
     </div>
   );
 }
